@@ -77,5 +77,19 @@ function llamarTickets($db, $ticket_id = null){
     }
 
 
+    function llamarRolesUsuario($db){
+        $sql = "SELECT id,nombre FROM rol";
+        $query = mysqli_query($db, $sql);
+    
+        $categorias = array();
+        
+        if($query && mysqli_num_rows($query) >= 1){
+            $categorias = $query;
+        }
+
+        return $categorias; 
+    }
+
+
 
 ?>
