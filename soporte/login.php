@@ -16,11 +16,11 @@ if(isset($_POST)){
         //verificamos contraseña
         $verify = password_verify($password,$usuario['password']);
 
-        if($verify){
+        if($verify){     
             //credenciales correctas
             //utilizar una sesion para guardar los datos del usuario logeado
             $_SESSION['usuario'] = $usuario;
-
+            //verificamos el rol del usuario
         }else{
             //incorrectas
             //enviar una sesión con el fallo en caso de requerirlo
