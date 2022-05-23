@@ -1,0 +1,3 @@
+copiar el contenido del php.ini , debe ir al xampp con los servicios detenidos , en el servicio apache click en config y elegir el php.ini pegar ahí
+
+copiar el contenido del sendmail , debe ir a c:xampp/sendmail y reemplazar el archivo sendmail
