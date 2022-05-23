@@ -1,5 +1,6 @@
 <?php
 include_once("conexion.php");
+include_once("notificacionTicket.php");
 
     if(isset($_POST['asunto']) && isset($_POST['descripcion']) && isset($_POST['categoria-incidente'])){        
         $asunto = mysqli_real_escape_string($db,$_POST['asunto']);
@@ -13,7 +14,10 @@ include_once("conexion.php");
 
 
         if($query){
-            $_SESSION['completado'] = 'Ticket creado con exito'; 
+            $destinatario = $_SESSION['usuario']['email'];
+            $asunto_email = "Creado Ticket #.... ".$asunto;
+            enviarEmail($destinatario,$asunto_email,$descripcion,$asunto);
+            $_SESSION['completado'] = 'Ticket creado con exito, revisa la bandeja de entrada de tu correo';
         }else{
             $_SESSION['errores']['general'] = 'Error al crear el ticket 1';
         }
