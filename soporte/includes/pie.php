@@ -1,4 +1,4 @@
-<?php if(isset($_SESSION['usuario'])):?>
+<?php if(isset($_SESSION['usuario']) && $_SESSION['usuario']['rol_id']==2):?>
     <script src="https://www.gstatic.com/dialogflow-console/fast/messenger/bootstrap.js?v=1"></script>
     <df-messenger
       intent="WELCOME"
