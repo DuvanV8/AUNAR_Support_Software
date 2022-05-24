@@ -8,15 +8,14 @@
         <!--caja principal-->
             <?php
               if(isset($_SESSION['usuario']['id'])){
-                if($_SESSION['usuario']['rol_id']==2){
+                
                   //inicio index usuario final
                   $tickets = llamarTickets($db);
 
                   if($tickets != null){
                     echo 
-                    '<div id="principal">
-                    <h1>Mis Tickets</h1>
-                    <table class="table table-striped">
+                        '<div id="principal">
+                        <table class="table table-striped">
                         <thead>
                           <tr>
                             <th scope="col">#</th>
@@ -46,8 +45,8 @@
                   echo
                   '</tbody>
                   </table>
-                  </div>';
-                }//fin index usuario final
+                  </div>';//div principal
+                //fin index usuario final
               }
             ?>
 

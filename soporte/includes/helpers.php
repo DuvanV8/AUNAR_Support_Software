@@ -41,13 +41,26 @@ function borrarErrores(){
 
 
 
-function llamarTickets($db, $ticket_id = null){    
+function llamarTickets($db, $ticket_id = null){
     $id_usuario = $_SESSION['usuario']['id'];
-   
-    if(!isset($ticket_id)){
+   //si no se especifica un id de ticket se muestran todos los del usuario actual
+    if(!isset($ticket_id) && $_SESSION['usuario']['rol_id']==2){    
+        echo '<h1>Mis Tickets</h1>';  
         $sql = "SELECT t.id, t.asunto, t.fecha_creacion, u.nombre AS usuario, et.descripcion AS estado FROM tickets t INNER JOIN usuarios u ON t.usuario_id = u.id INNER JOIN estado_ticket et ON t.id_estado_ticket = et.id WHERE u.id = '$id_usuario'";
-    }else{
-        $sql = "SELECT t.id, t.asunto, t.descripcion, t.fecha_creacion, u.nombre AS usuario, et.descripcion AS estado FROM tickets t INNER JOIN usuarios u ON t.usuario_id = u.id INNER JOIN estado_ticket et ON t.id_estado_ticket = et.id WHERE u.id = '$id_usuario' AND t.id = '$ticket_id'";
+    }else if(!isset($ticket_id) && $_SESSION['usuario']['rol_id']==1){
+        //si el usuario es administrador se le muestran todos los tickets
+        echo '<h1>Todos los Tickets</h1>';  
+        $sql = "SELECT t.id, t.asunto, t.fecha_creacion, u.nombre AS usuario, et.descripcion AS estado FROM tickets t INNER JOIN usuarios u ON t.usuario_id = u.id INNER JOIN estado_ticket et ON t.id_estado_ticket = et.id";        
+    }else if(isset($ticket_id)){
+        echo '<h1>Detalle Ticket</h1>';
+        //se muestra el ticket correspndiente al id
+        if($_SESSION['usuario']['rol_id']==1){
+            //si es admin
+            $sql = "SELECT t.id, t.asunto, t.descripcion, t.fecha_creacion, u.nombre AS usuario, et.descripcion AS estado FROM tickets t INNER JOIN usuarios u ON t.usuario_id = u.id INNER JOIN estado_ticket et ON t.id_estado_ticket = et.id WHERE t.id = '$ticket_id'";
+        }else{
+            //si es usuario normal
+            $sql = "SELECT t.id, t.asunto, t.descripcion, t.fecha_creacion, u.nombre AS usuario, et.descripcion AS estado FROM tickets t INNER JOIN usuarios u ON t.usuario_id = u.id INNER JOIN estado_ticket et ON t.id_estado_ticket = et.id WHERE u.id = '$id_usuario' AND t.id = '$ticket_id'";            
+        }
     }
 
 

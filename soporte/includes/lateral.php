@@ -5,7 +5,8 @@
         <?php if($_SESSION['usuario']['rol_id']==1):?>                  
                 <div class="bloque">
                     <h3 class="alerta-usuario"><?='Bienvenido, '.$_SESSION['usuario']['nombre']?></h3>
-                    <a class="boton-menu-usuario boton-green" href="crearUsuario.php">Crear Usuario</a>
+                    <a class="boton-menu-usuario boton-blue" href="index.php">Tickets</a>
+                    <a class="boton-menu-usuario boton-blue" href="crearUsuario.php">Crear Usuario</a>
                     <a class="boton-menu-usuario boton-red" href="cerrarSesion.php">Cerrar Sesión</a>
                 </div>
         <?php endif;?>
@@ -14,6 +15,7 @@
          <?php if($_SESSION['usuario']['rol_id']==2):?>                  
                 <div class="bloque">
                     <h3 class="alerta-usuario"><?='Bienvenido, '.$_SESSION['usuario']['nombre']?></h3>
+                    <a class="boton-menu-usuario boton-blue" href="index.php">Mis Tickets</a>
                     <a class="boton-menu-usuario boton-green" href="crearTicket.php">Crear Ticket</a>
                     <a class="boton-menu-usuario boton-red" href="cerrarSesion.php">Cerrar Sesión</a>
                 </div>
@@ -22,7 +24,6 @@
 
 
 </aside>
-<div>
 
 
 <!--Inicio de sesión-->
