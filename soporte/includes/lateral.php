@@ -6,7 +6,7 @@
                 <div class="bloque">
                     <h3 class="alerta-usuario"><?='Bienvenido, '.$_SESSION['usuario']['nombre']?></h3>
                     <a class="boton-menu-usuario boton-blue" href="index.php">Tickets</a>
-                    <a class="boton-menu-usuario boton-blue" href="crearUsuario.php">Crear Usuario</a>
+                    <a class="boton-menu-usuario boton-green" href="crearUsuario.php">Crear Usuario</a>
                     <a class="boton-menu-usuario boton-red" href="cerrarSesion.php">Cerrar Sesión</a>
                 </div>
         <?php endif;?>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-05-2022 a las 18:04:12
+-- Tiempo de generación: 25-05-2022 a las 02:18:50
 -- Versión del servidor: 10.4.21-MariaDB
 -- Versión de PHP: 8.0.11
 
@@ -187,7 +187,13 @@ INSERT INTO `tickets` (`id`, `usuario_id`, `categoria_incidente_id`, `asunto`, `
 (7, 7, 2, 'Falla internet', 'No me conecta el wifi!!', 3, 1, NULL, 1, '2022-05-23', NULL),
 (8, 7, 1, 'Cable HDMI roto', 'Se encuentra dañada una de las puntas del cable HDMI del salon 101', 3, 1, NULL, 1, '2022-05-23', NULL),
 (9, 7, 2, 'Salon 202 Aire no enciende', 'No enciende el aire', 3, 1, NULL, 1, '2022-05-23', NULL),
-(10, 7, 2, 'Salón 205 Lampara no enciende', 'Lampara no enciende', 3, 1, NULL, 1, '2022-05-23', NULL);
+(10, 7, 2, 'Salón 205 Lampara no enciende', 'Lampara no enciende', 3, 1, NULL, 1, '2022-05-23', NULL),
+(11, 2, 2, 'Falla internet', 'No conecta el wifiiiii', 3, 1, NULL, 1, '2022-05-23', NULL),
+(12, 2, 2, 'Salon 202 Aire no enciende', 'Falla en el aire del salón 202', 3, 1, NULL, 1, '2022-05-23', NULL),
+(13, 7, 1, 'Antivirus sin licencia', 'Error de licencia', 3, 1, NULL, 1, '2022-05-24', NULL),
+(14, 7, 2, 'PC no da imagen', 'Falla en pantalla', 3, 1, NULL, 1, '2022-05-24', NULL),
+(15, 7, 2, 'Salon 205 TV no enciende', 'Problemas con el tv', 3, 1, NULL, 1, '2022-05-24', NULL),
+(16, 7, 2, 'Teclado dañado sala 2', 'El teclado dek equipo 12 no funciona', 3, 1, NULL, 1, '2022-05-24', NULL);
 
 -- --------------------------------------------------------
 
@@ -211,7 +217,7 @@ CREATE TABLE `usuarios` (
 
 INSERT INTO `usuarios` (`id`, `nombre`, `rol_id`, `cargo`, `email`, `password`, `fecha_alta`) VALUES
 (1, 'Juan Perez', 2, 'Docente', 'juanperez@gmail.com', '$2y$04$vScvvf1eF9JtdAhGwxuB7uzOiubIyDMHM53Tq0H/ly55H2ZYDS8Oi', '2022-04-26'),
-(2, 'Duvang Varon', 2, 'Docente', 'duvangvaron@gmail.com', '$2y$04$vScvvf1eF9JtdAhGwxuB7uzOiubIyDMHM53Tq0H/ly55H2ZYDS8Oi', '2022-04-26'),
+(2, 'Duvang Varon', 2, 'Docente', 'duvanvaron99@gmail.com', '$2y$04$vScvvf1eF9JtdAhGwxuB7uzOiubIyDMHM53Tq0H/ly55H2ZYDS8Oi', '2022-04-26'),
 (3, 'Administrador', 1, 'Administrativo', 'ticketsaunar@gmail.com', '$2y$04$vScvvf1eF9JtdAhGwxuB7uzOiubIyDMHM53Tq0H/ly55H2ZYDS8Oi', '2022-05-22'),
 (4, 'Brayan C', 2, 'Docente', 'brayan@gmail.com', '$2y$04$vScvvf1eF9JtdAhGwxuB7uzOiubIyDMHM53Tq0H/ly55H2ZYDS8Oi', '2022-05-22'),
 (5, 'Juan Pablo Perez', 2, 'Docente', 'juan@gmail.com', '$2y$04$rb1gTWPax64FZBfBWPseVeTFiL30KR4Pl0vr319oZz7aURB75lP7K', '2022-05-22'),
@@ -300,7 +306,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `tickets`
 --
 ALTER TABLE `tickets`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
